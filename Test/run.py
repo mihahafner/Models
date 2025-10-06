@@ -1,3 +1,14 @@
+# --- make repo root importable when run as a script ---
+from pathlib import Path
+import sys
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+# ------------------------------------------------------
+
+
+
+
 import argparse, pandas as pd
 from pathlib import Path
 from All_Models import get_model
